@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tasklist %>
+
+<div>
+  <%= link_to "Edit this tasklist", edit_tasklist_path(@tasklist) %> |
+  <%= link_to "Back to tasklists", tasklists_path %>
+
+  <%= button_to "Destroy this tasklist", @tasklist, method: :delete %>
+</div>
