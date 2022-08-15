@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  Task_name: MyString
+  Taskname: MyString
+  Status: false
+  Duedate: 2022-08-15
   Details: MyText
-  Due_date: 2022-08-15
 
 two:
-  Task_name: MyString
+  Taskname: MyString
+  Status: false
+  Duedate: 2022-08-15
   Details: MyText
-  Due_date: 2022-08-15

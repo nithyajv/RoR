@@ -15,8 +15,9 @@ class TasklistsTest < ApplicationSystemTestCase
     click_on "New tasklist"
 
     fill_in "Details", with: @tasklist.Details
-    fill_in "Due date", with: @tasklist.Due_date
-    fill_in "Task name", with: @tasklist.Task_name
+    fill_in "Duedate", with: @tasklist.Duedate
+    check "Status" if @tasklist.Status
+    fill_in "Taskname", with: @tasklist.Taskname
     click_on "Create Tasklist"
 
     assert_text "Tasklist was successfully created"
@@ -28,8 +29,9 @@ class TasklistsTest < ApplicationSystemTestCase
     click_on "Edit this tasklist", match: :first
 
     fill_in "Details", with: @tasklist.Details
-    fill_in "Due date", with: @tasklist.Due_date
-    fill_in "Task name", with: @tasklist.Task_name
+    fill_in "Duedate", with: @tasklist.Duedate
+    check "Status" if @tasklist.Status
+    fill_in "Taskname", with: @tasklist.Taskname
     click_on "Update Tasklist"
 
     assert_text "Tasklist was successfully updated"

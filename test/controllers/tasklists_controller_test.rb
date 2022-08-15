@@ -17,7 +17,7 @@ class TasklistsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tasklist" do
     assert_difference("Tasklist.count") do
-      post tasklists_url, params: { tasklist: { Details: @tasklist.Details, Due_date: @tasklist.Due_date, Task_name: @tasklist.Task_name } }
+      post tasklists_url, params: { tasklist: { Details: @tasklist.Details, Duedate: @tasklist.Duedate, Status: @tasklist.Status, Taskname: @tasklist.Taskname } }
     end
 
     assert_redirected_to tasklist_url(Tasklist.last)
@@ -34,7 +34,7 @@ class TasklistsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tasklist" do
-    patch tasklist_url(@tasklist), params: { tasklist: { Details: @tasklist.Details, Due_date: @tasklist.Due_date, Task_name: @tasklist.Task_name } }
+    patch tasklist_url(@tasklist), params: { tasklist: { Details: @tasklist.Details, Duedate: @tasklist.Duedate, Status: @tasklist.Status, Taskname: @tasklist.Taskname } }
     assert_redirected_to tasklist_url(@tasklist)
   end
 

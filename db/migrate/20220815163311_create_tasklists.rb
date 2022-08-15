@@ -1,9 +1,10 @@
 class CreateTasklists < ActiveRecord::Migration[7.0]
   def change
     create_table :tasklists do |t|
-      t.string :Task_name
+      t.string :Taskname
+      t.boolean :Status
+      t.date :Duedate
       t.text :Details
-      t.date :Due_date
 
       t.timestamps
     end
