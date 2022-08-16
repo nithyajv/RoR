@@ -65,6 +65,8 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
+      #@user.tasklists.save
+
       params.require(:user).permit(:firstname, :lastname, :dob)
     end
 

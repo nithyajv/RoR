@@ -65,6 +65,7 @@ class TasklistsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tasklist_params
-      params.require(:tasklist).permit(:Taskname, :Status, :Duedate, :Details)
+      #@user.tasklist.save
+      params.require(:tasklist).permit(:Taskname, :Status, :Duedate, :Details, :user_id)
     end
 end

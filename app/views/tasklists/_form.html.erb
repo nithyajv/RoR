@@ -17,6 +17,13 @@
   </div>
 
   <div>
+    <% value={} %>
+<% User.all.each {|x| value[x.id] = x.firstname}%>
+    <%= form.label :user, style: "display: block" %>
+    <%= form.select :user_id, :collection => value.sort.map {|k,v| [v,k]} %>
+  </div>
+
+  <div>
     <%= form.label :Status, style: "display: block" %>
     <%= form.check_box :Status %>
   </div>
