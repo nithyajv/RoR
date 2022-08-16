@@ -2,13 +2,32 @@
 
 <h1>Task list</h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>Task name</th>
+      <th>Status</th>
+      <th>Due date</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+<tbody>
 <div id="tasklists">
   <% @tasklists.each do |tasklist| %>
-    <%= render tasklist %>
-    <p>
-      <%= link_to "Show this tasklist", tasklist %>
-    </p>
+      <tr>
+        <td><%= tasklist.Taskname %></td>
+        <td><%= tasklist.Status ? "Completed" : "Pending" %></td>
+        <td><%= tasklist.Duedate %></td>
+        <td><%= tasklist.Details %></td>
+        <td><%= link_to "Show", tasklist %></td>
+      </tr>
+   
   <% end %>
 </div>
+</tbody>
+</table>
+<br>
 
 <%= link_to "New tasklist", new_tasklist_path %>
