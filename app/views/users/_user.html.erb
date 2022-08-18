@@ -15,8 +15,11 @@
   </p>
 
   <p>
-    <strong>Tasks:</strong>
-    <%= @task %>
+    <strong><u>Tasks</u></strong>
+    <% @task.each do |x| %>
+    <br>
+    <%= x %>
+    <% end %>
 </p>
   
 </div>
