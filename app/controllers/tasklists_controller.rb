@@ -1,5 +1,6 @@
 class TasklistsController < ApplicationController
   before_action :set_tasklist, only: %i[ show edit update destroy ]
+  before_action  :authenticate_user!
 
   # GET /tasklists or /tasklists.json
   def index

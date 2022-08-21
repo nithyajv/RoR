@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  before_action  :authenticate_user!
+
 
   # GET /users or /users.json
   def index
@@ -27,9 +29,13 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
+    #NewUserEmailMailer.verify_user(@user).deliver_now
+
 
     respond_to do |format|
       if @user.save
+        NewUserEmailMailer.with(user: @user).verify_user.deliver_now
+
         format.html { redirect_to user_url(@user), notice: "user was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
