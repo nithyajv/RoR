@@ -30,4 +30,29 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: "Welcome!"
+  link:
+   sign_up: "Sign Up"
+   sign_in: "Sign In"
+   edit_profile: "Edit Profile"
+   user_list: "User List"
+   task_list: "Task List"
+   new_task: "New Task"
+   sign_out: "Sign out"
+
+  action:
+    update: "Update"
+    create: "Create"
+    cancel_account: "Cancel my account"
+    back: "Back"
+    forget_password: "Forgot your password?"
+    show_user: "Show this user"
+    show_task: "Show this task"
+    back_user: "Back to users"
+    back_task: "Back to tasks"
+    create_task: "Create Task"
+    edit_task: "Edit this task"
+    edit_user: "Edit this user"
+    destroy_task: "Destroy this task"
+    destroy_user: "Destroy this user"
+

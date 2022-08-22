@@ -16,14 +16,17 @@
 <p class="navbar-text float-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> 
-  <%= link_to 'Users List', users_path,class:"navbar-link" %>
-  <%= link_to 'Tasks List', tasklists_path,class:"navbar-link" %>
-  <%= link_to 'New Task', new_tasklist_path,class:"navbar-link" %>
-  <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+
+  <%= link_to t('link.edit_profile'), edit_user_registration_path, :class => 'navbar-link' %>
+  <%= link_to t('link.user_list'), users_path,class:"navbar-link" %>
+  <%= link_to t('link.task_list'), tasklists_path,class:"navbar-link" %>
+  <%= link_to t('link.new_task'), new_tasklist_path,class:"navbar-link" %>
+  <%= button_to t('link.sign_out'), destroy_user_session_path, method: :delete ,class:"navbar-link" %>
+
 <% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <%= link_to  t('link.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to t('link.sign_in'), new_user_session_path, :class => 'navbar-link'  %>
+
 <% end %>
 </p>
 
@@ -35,5 +38,13 @@
    <% end %>
 -->
       <%= yield %>
+      <div>
+
+      <br>
+          <%= link_to "English", root_path(locale: :en)%> |
+          <%= link_to "русский", root_path(locale: :ru)%>
+      <br>
+      </div>
+
   </body>
 </html>

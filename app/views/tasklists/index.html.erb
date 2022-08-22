@@ -22,7 +22,7 @@
         <td><%= tasklist.Duedate %></td>
         <td><%= tasklist.Details %></td>
         <td><%= tasklist.user_id %></td>
-        <td><%= link_to "Show", tasklist %></td>
+        <td><%= link_to t('action.show_task'), tasklist %></td>
       </tr>
    
   <% end %>
@@ -31,4 +31,5 @@
 </table>
 <br>
 
-<%= link_to "New tasklist", new_tasklist_path %>
+<%= link_to t('link.new_task'), new_tasklist_path %>
+

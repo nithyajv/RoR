@@ -2,8 +2,10 @@
 <%= render @tasklist %>
 
 <div>
-  <%= link_to "Edit this tasklist", edit_tasklist_path(@tasklist) %> |
-  <%= link_to "Back to tasklists", tasklists_path %>
+  
+  <%= link_to t('action.edit_task'), edit_tasklist_path(@tasklist) %> 
+  <%= link_to t('action.back_task'), tasklists_path %>
 
-  <%= button_to "Destroy this tasklist", @tasklist, method: :delete %>
+  <%= button_to t('action.destroy_task'), @tasklist, method: :delete %>
+
 </div>
