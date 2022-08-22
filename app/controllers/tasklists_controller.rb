@@ -26,6 +26,8 @@ class TasklistsController < ApplicationController
 
     respond_to do |format|
       if @tasklist.save
+        @user = User.find_by_id(@tasklist.user_id)
+        NewUserEmailMailer.task_mail(@user,@tasklist).deliver_now
         format.html { redirect_to tasklist_url(@tasklist), notice: "Tasklist was successfully created." }
         format.json { render :show, status: :created, location: @tasklist }
       else
@@ -39,6 +41,8 @@ class TasklistsController < ApplicationController
   def update
     respond_to do |format|
       if @tasklist.update(tasklist_params)
+        @user = User.find_by_id(@tasklist.user_id)
+        NewUserEmailMailer.task_update(@user,@tasklist).deliver_now
         format.html { redirect_to tasklist_url(@tasklist), notice: "Tasklist was successfully updated." }
         format.json { render :show, status: :ok, location: @tasklist }
       else
