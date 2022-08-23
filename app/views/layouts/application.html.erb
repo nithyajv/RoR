@@ -1,50 +1,101 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tasklist1</title>
+    <title>Tasklist</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
 
   <body>
 
 
-<p class="navbar-text float-right">
+<p class="navbar-text">
+  <div class="jumbotron text-center">
+        <h1>TO DO LIST </h1>
+    </div>
+
 <% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
+  Logged in as <strong><%= current_user.email %></strong><br>
+  
 
-  <%= link_to t('link.edit_profile'), edit_user_registration_path, :class => 'navbar-link' %>
-  <%= link_to t('link.user_list'), users_path,class:"navbar-link" %>
-  <%= link_to t('link.task_list'), tasklists_path,class:"navbar-link" %>
-  <%= link_to t('link.new_task'), new_tasklist_path,class:"navbar-link" %>
-  <%= button_to t('link.sign_out'), destroy_user_session_path, method: :delete ,class:"navbar-link" %>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+
+        <%= link_to t('link.edit_profile'), edit_user_registration_path, :class => 'nav-link active' %>
+        <%= link_to t('link.user_list'), users_path,class:"nav-link active" %>
+        <%= link_to t('link.task_list'), tasklists_path,class:"nav-link active" %>
+        <%= link_to t('link.new_task'), new_tasklist_path,class:"nav-link active" %>
+      </div>
+    
+        <div class ="navbar-nav ms-auto">
+          <%= link_to "English", root_path(locale: :en),class:"nav-link active"%>
+          <%= link_to "русский", root_path(locale: :ru),class:"nav-link active"%>
+        </div>
+      </div>
+</nav>
+      
+<br>
+  <%= button_to t('link.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark float-end'%>
 <% else %>
-  <%= link_to  t('link.sign_up'), new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to t('link.sign_in'), new_user_session_path, :class => 'navbar-link'  %>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+<div class ="navbar-nav">
+
+  <%= link_to  t('link.sign_up'), new_user_registration_path, class: 'nav-link active'  %> 
+  <%= link_to t('link.sign_in'), new_user_session_path, class: 'nav-link active'  %>
+
+</div>
+
+  <div class ="navbar-nav ms-auto">
+    <%= link_to "English", root_path(locale: :en),class:"nav-link active"%> 
+    <%= link_to "русский", root_path(locale: :ru),class:"nav-link active"%>
+  </div>
+  </div>
 <% end %>
-</p>
 
+
+
+
+</div>
+</div>
+</div>
+</nav>
+</p>
+<br>
+
+  
+  <% if notice %>
   <p style="color: green" class="alert alert-success"><%= notice %></p> 
-<!---
+  <% end %>
+
   <% if alert %>
    <p class="alert alert-danger">
    <%= alert %></p> 
    <% end %>
--->
-      <%= yield %>
-      <div>
 
-      <br>
-          <%= link_to "English", root_path(locale: :en)%> |
-          <%= link_to "русский", root_path(locale: :ru)%>
-      <br>
-      </div>
+   
+
+      <%= yield %>
+      
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
   </body>
 </html>

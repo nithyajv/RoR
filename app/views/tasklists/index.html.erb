@@ -1,7 +1,7 @@
 <head>
 <h1>Task list</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Task name</th>
@@ -26,9 +26,11 @@
       </tr>
    
   <% end %>
-</div>
+  </div>
 </tbody>
 </table>
+
+
 <br>
 
 <%= link_to t('link.new_task'), new_tasklist_path %>
