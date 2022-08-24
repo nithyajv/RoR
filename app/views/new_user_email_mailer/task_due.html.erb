@@ -1,0 +1,13 @@
+<h1><%= @user.firstname %><br>Task reminder</h1>
+<br>
+<br>
+<p>
+    This is your task due Date remainder.
+    <br> Task:<b><%= @tasklist.Taskname %>
+    <br> date:<b><%= @tasklist.Duedate %>
+<% if @tasklist.Status %>
+<br><strong>Task Status: </strong> Completed
+<%else%>
+<br><strong>Task Status: </strong> Pending
+<%end%>
+</p>

@@ -20,4 +20,10 @@ class NewUserEmailMailer < ApplicationMailer
 
   end
 
+  def task_due(user,tasklist)
+    @user=user
+    @tasklist=tasklist
+    mail(to: @user.email,subject:"Task reminder")
+  end
+
 end
