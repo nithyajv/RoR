@@ -9,6 +9,9 @@ gem 'rails-i18n'
 
 gem 'whenever', require: false
 
+gem 'prawn'
+gem 'prawn-table'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 

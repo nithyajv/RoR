@@ -5,6 +5,19 @@ class TasklistsController < ApplicationController
   # GET /tasklists or /tasklists.json
   def index
     @tasklists = Tasklist.all
+
+    respond_to do |format|
+      format.html
+
+      format.pdf do
+        pdf = TasklistPdf.new(@tasklists)
+        #pdf.text "Hellow World!"
+        send_data pdf.render,
+          filename: "tasklist.pdf",
+          type: 'application/pdf',
+          disposition: 'attachment'
+      end
+    end
   end
 
   # GET /tasklists/1 or /tasklists/1.json

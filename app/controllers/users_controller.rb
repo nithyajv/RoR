@@ -6,6 +6,19 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @users = User.all
+
+    respond_to do |format|
+      format.html
+
+      format.pdf do
+        pdf = UserPdf.new(@users)
+        #pdf.text "Hellow World!"
+        send_data pdf.render,
+          filename: "user.pdf",
+          type: 'application/pdf',
+          disposition: 'attachment'
+      end
+    end
   end
 
   # GET /users/1 or /users/1.json
