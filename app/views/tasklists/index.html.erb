@@ -1,7 +1,9 @@
 <head>
 <h1>Task list</h1>
 
-<%= link_to "PDF File", tasklists_path(format: 'pdf') %>
+<%= link_to "Download PDF", tasklists_path(format: 'pdf') %>
+<%= link_to "Download CSV", tasklists_path(format: 'csv') %>
+
 
 <table class="table table-striped">
   <thead>

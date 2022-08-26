@@ -17,6 +17,8 @@ class TasklistsController < ApplicationController
           type: 'application/pdf',
           disposition: 'attachment'
       end
+
+      format.csv
     end
   end
 

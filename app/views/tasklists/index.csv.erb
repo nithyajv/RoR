@@ -1,0 +1,9 @@
+<%= fields= [:tname,:tstatus,:tdue,:uid].join(",") %>
+<% @tasklists.each do |task|%>
+<% tname= task.Taskname%>
+<% tstatus= task.Status ? "Completed" : "Pending"%>
+<% tdue= task.Duedate%>
+<% uid= task.user_id%>
+<%= [tname,tstatus,tdue,uid].join(",") %>
+
+<%end%>
