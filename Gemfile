@@ -3,16 +3,24 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
+#authentication
 gem 'devise'
 
+#internationalization
 gem 'rails-i18n'
 
+#cronjob
 gem 'whenever', require: false
 
+#pdf generation
 gem 'prawn'
 gem 'prawn-table'
 
+#jquery ajax
 gem 'jquery-rails'
+
+gem 'rspec-rails'
+gem 'rspec'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
