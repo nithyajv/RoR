@@ -20,7 +20,7 @@
     <% value={} %>
 <% User.all.each {|x| value[x.id] = x.firstname}%>
     <%= form.label :user, style: "display: block" %>
-    <%= form.select :user_id, value.sort.map {|k,v| [v,k]}, onChange: "javascript: alert();" %>
+    <%= form.select :user_id, value.sort.map {|k,v| [v,k]} %>
   </div>
 
   <div>
