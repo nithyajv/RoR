@@ -60,9 +60,11 @@ class TasklistsController < ApplicationController
         NewUserEmailMailer.task_update(@user,@tasklist).deliver_now
         format.html { redirect_to tasklist_url(@tasklist), notice: "Tasklist was successfully updated." }
         format.json { render :show, status: :ok, location: @tasklist }
+        format.js
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @tasklist.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end

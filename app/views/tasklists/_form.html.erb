@@ -1,4 +1,4 @@
-<%= form_with(model: tasklist) do |form| %>
+<%= form_for(@tasklist) do |form| %>
   <% if tasklist.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(tasklist.errors.count, "error") %> prohibited this tasklist from being saved:</h2>
@@ -20,7 +20,7 @@
     <% value={} %>
 <% User.all.each {|x| value[x.id] = x.firstname}%>
     <%= form.label :user, style: "display: block" %>
-    <%= form.select :user_id, value.sort.map {|k,v| [v,k]} %>
+    <%= form.select :user_id, value.sort.map {|k,v| [v,k]}, onChange: "javascript: alert();" %>
   </div>
 
   <div>
