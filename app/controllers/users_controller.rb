@@ -18,6 +18,7 @@ class UsersController < ApplicationController
           type: 'application/pdf',
           disposition: 'attachment'
       end
+      format.csv
     end
   end
 

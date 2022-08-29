@@ -1,0 +1,8 @@
+<%= fields= [:fname,:lname,:d].join(",") %>
+<% @users.each do |user|%>
+<% fname= user.firstname%>
+<% lname= user.lastname%>
+<% d= user.dob%>
+<%= [fname,lname,d].join(",") %>
+
+<%end%>
