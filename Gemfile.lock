@@ -196,10 +196,6 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
-    rspec (3.11.0)
-      rspec-core (~> 3.11.0)
-      rspec-expectations (~> 3.11.0)
-      rspec-mocks (~> 3.11.0)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
     rspec-expectations (3.11.0)
@@ -281,7 +277,6 @@ DEPENDENCIES
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-i18n
   redis (~> 4.0)
-  rspec
   rspec-rails
   selenium-webdriver
   sprockets-rails
